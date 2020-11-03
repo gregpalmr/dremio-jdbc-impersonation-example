@@ -6,11 +6,11 @@ USAGE:
 
 ### Step 1. Setup the "inbound impersonation" feature on your Dremio Enterprise cluster.
 
-a. Sign into your Dremio Enterprise coordinator node as an administrator.
+  a. Sign into your Dremio Enterprise coordinator node as an administrator.
 
-b. Click on the "New Query" button to bring up a new query editor.
+  b. Click on the "New Query" button to bring up a new query editor.
 
-c. Run the ALTER SYSTEM command that updates the "exec.impersonation.inbound_policies" support key. Use the format:
+  c. Run the ALTER SYSTEM command that updates the "exec.impersonation.inbound_policies" support key. Use the format:
 
           ALTER SYSTEM SET "exec.impersonation.inbound_policies"='[
           {
@@ -34,7 +34,7 @@ c. Run the ALTER SYSTEM command that updates the "exec.impersonation.inbound_pol
           }
           ]'
 
-You can also specify groups in the principals settings, like this:
+  You can also specify groups in the principals settings, like this:
 
           ALTER SYSTEM SET "exec.impersonation.inbound_policies"='[
           {
@@ -58,22 +58,22 @@ You can also specify groups in the principals settings, like this:
           }
           ]'
 
-d. Verify that the command ran correctly. Use the command:
+  d. Verify that the command ran correctly. Use the command:
 
           -- Verify the ALTER SYSTEM command
           SELECT name, string_val 
           FROM   sys.options 
           WHERE  name = 'exec.impersonation.inbound_policies'
 
-### Step 2. Install the Dremio Samples data source
+### Step 2. Install the Dremio Sample data source
 
-a. In the Dremio Web UI, click on the "Add Sample Source" button.
+ a. In the Dremio Web UI, click on the "Add Sample Source" button.
 
-b. Click on the new Samples link under the "Data Lakes" sources.
+ b. Click on the new Samples link under the "Data Lakes" sources.
 
-c. Click on the samples.dremio.com folder and then hover over the NYC-taxi-trips "Actions" column.
+ c. Click on the samples.dremio.com folder and then hover over the NYC-taxi-trips "Actions" column.
 
-d. Click on the "Format folder" icon and then click on the Save button.
+ d. Click on the "Format folder" icon and then click on the Save button.
 
 ### Step 3. Clone this git repo with the command:
 

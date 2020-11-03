@@ -91,6 +91,8 @@ Compile the java source file  with the command:
 
      $ javac DremioJdbcImpersonationExample.java
 
+Notice that the JDBC connection string specifies the `impersonation_target` user that is different from the connection user specified in the userId variable.
+
 ### Step 6. Set the Java class path
 
 Set the class path  with the command:
@@ -106,6 +108,40 @@ Where <dremio proxy user id> is the user that you are connecting to the Dremio s
      for example:
 
      $ java DremioJdbcImpersonationExample 127.0.0.1 dremiouser1 dremiopassword dremiouser2"
+
+          Pickup Datetime            Pass Count  Trip Dist Mi  Fair Amount
+          ----------------------------------------------------------------
+          2014-08-07 07:26:00.0          1          0.44          5.5
+          2014-08-07 07:23:00.0          1          1.12          9.5
+          2014-08-07 07:06:00.0          1          7.54         28.5
+          2014-08-07 07:23:00.0          1           3.3         11.5
+          2014-08-07 07:27:00.0          5          1.22          6.5
+          2014-08-07 07:15:00.0          1          9.89         32.0
+          2014-08-07 07:15:00.0          1          2.01         13.5
+          2014-08-07 07:20:00.0          1          1.76         11.0
+          2014-08-07 07:31:00.0          1          1.18          7.5
+          2014-08-07 07:16:00.0          2         16.05         43.5
+          2014-08-07 07:35:00.0          1          1.03          6.5
+          2014-08-07 08:21:00.0          1          0.72          5.0
+          2014-08-07 08:15:00.0          1          1.03          7.5
+          2014-08-07 07:59:00.0          3         11.35         33.5
+          2014-08-07 08:03:00.0          1          3.23         18.0
+          2014-08-07 08:11:00.0          5          1.04         11.0
+          2014-08-07 07:37:00.0          3          0.91          8.5
+          2014-08-07 07:40:00.0          1          0.41          5.0
+          2014-08-07 07:44:00.0          6          0.49          6.5
+          2014-08-07 07:20:00.0          1         17.07         52.0
+          2014-08-07 07:40:00.0          1          1.14          6.5
+          2014-08-07 07:14:00.0          2         13.45         39.0
+          2014-08-07 07:39:00.0          1          1.46          7.5
+          2014-08-07 07:38:00.0          2           1.8         10.0
+          2014-08-07 07:38:00.0          1           4.3         15.5
+
+### Step 8. Verify that the impersonation was successful
+
+a. In the Dremio Web UI, click on the Jobs link to view the job history
+
+b. Verify that the query was run as the "impersonation_target" user and not the user specified as the connection userId.
 
 ---
 

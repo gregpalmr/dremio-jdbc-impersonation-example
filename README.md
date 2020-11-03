@@ -10,13 +10,19 @@ USAGE:
 
 If you don't have the git command line tool, you can download the git repo in ZIP file format.
 
-### Step 2. Download the Dremio JDBC Driver from httpd://dremio.com/drivers and place it in this directory
+### Step 2. Download the Dremio JDBC Driver
 
-### Step 3. Compile the java source file with the command:
+Download the Dremio JDBC driver from httpd://dremio.com/drivers and place it in this directory
+
+### Step 3. Compile the java source file
+
+Compile the java source file  with the command:
 
      $ javac DremioJdbcImpersonationExample.java
 
-### Step 4. Set the Java class path with the command:
+### Step 4. Set the Java class path
+
+Set the class path  with the command:
 
      $ export CLASSPATH="./dremio-jdbc-driver-*.jar:."
 

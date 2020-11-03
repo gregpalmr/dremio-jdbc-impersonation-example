@@ -2,7 +2,7 @@
 
 A Java JDBC client example that uses the Dremio inbound impersonation capability
 
-USAGE:
+## USAGE:
 
 ### Step 1. Setup the "inbound impersonation" feature on your Dremio Enterprise cluster.
 

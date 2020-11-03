@@ -4,23 +4,23 @@ A Java JDBC client example that uses the Dremio inbound impersonation capability
 
 USAGE:
 
-     ### Step 1. Clone this git repo with the command:
+### Step 1. Clone this git repo with the command:
 
           $ git clone https://github.com/gregpalmr/dremio-jdbc-impersonation-example
 
           If you don't have the git command line tool, you can download the git repo in ZIP file format.
 
-     ### Step 2. Download the Dremio JDBC Driver from httpd://dremio.com/drivers and place it in this directory
+### Step 2. Download the Dremio JDBC Driver from httpd://dremio.com/drivers and place it in this directory
 
-     ### Step 3. Compile the java source file with the command:
+### Step 3. Compile the java source file with the command:
 
           $ javac DremioJdbcImpersonationExample.java
 
-     ### Step 4. Set the Java class path with the command:
+### Step 4. Set the Java class path with the command:
 
           $ export CLASSPATH="./dremio-jdbc-driver-*.jar:."
 
-     ### Step 5. Setup the "inbound impersonation" feature on your Dremio Enterprise cluster.
+### Step 5. Setup the "inbound impersonation" feature on your Dremio Enterprise cluster.
 
      a. Sign into your Dremio Enterprise coordinator node as an administrator.
 
@@ -81,7 +81,7 @@ USAGE:
           FROM   sys.options 
           WHERE  name = 'exec.impersonation.inbound_policies'
 
-     ### Step 6. Run the example JDBC client application with the command format:
+### Step 6. Run the example JDBC client application with the command format:
 
           $ java DremioJdbcImpersonationExample <dremio coordinator ip addr> <dremio proxy user id> <dremio proxy user password> <target user id>"
 

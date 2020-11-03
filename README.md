@@ -75,9 +75,11 @@ A Java JDBC client example that uses the Dremio inbound impersonation capability
 
  d. Click on the "Format folder" icon and then click on the Save button.
 
-### Step 3. Clone this git repo with the command:
+### Step 3. Clone this git repo with the commands:
 
      $ git clone https://github.com/gregpalmr/dremio-jdbc-impersonation-example
+
+     $ cd dremio-jdbc-impersonation-example/src
 
 If you don't have the git command line tool, you can download the git repo in ZIP file format.
 

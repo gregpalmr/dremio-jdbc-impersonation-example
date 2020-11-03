@@ -15,7 +15,7 @@
 //
 //        Run the example application
 //
-//             $ java DremioJdbcImpersonationExample <dremio coordinator ip addr> <dremio user id> <dremio password> <delegation user id>"
+//             $ java DremioJdbcImpersonationExample <dremio coordinator ip addr> <dremio user id> <dremio password> <target user id>"
 //
 //        OR
 //
@@ -46,19 +46,19 @@ public class DremioJdbcImpersonationExample {
    String userId   = null;
    String password = null;
    String dbUrl    = null;
-   String delegationUid = null;
+   String targetUserId = null;
 
    if (args.length < 4) {
      System.err.println("\n ERROR - Arguments not supplied correctly. Exiting.");
-     System.err.println("\n USAGE:  java DremioJdbcImpersonationExample <dremio coordinator ip addr>  <dremio user id> <dremio password> <delegation user id>");
+     System.err.println("\n USAGE:  java DremioJdbcImpersonationExample <dremio coordinator ip addr>  <dremio user id> <dremio password> <target user id>");
      System.err.println("   OR    java DremioJdbcImpersonationExample 192.168.2.234 dremiouser1 dremiopassword dremiouser2 \n");
      System.exit(1);
    } else {
       dbServer = args[0];
       userId   = args[1];
       password = args[2];
-      delegationUid = args[3];
-      dbUrl    = "jdbc:dremio:direct=" + dbServer + ":31010" + ";impersonation_target=" + delegationUid;
+      targetUserId = args[3];
+      dbUrl    = "jdbc:dremio:direct=" + dbServer + ":31010" + ";impersonation_target=" + targetUserId;
    }
 
    Connection conn = null;

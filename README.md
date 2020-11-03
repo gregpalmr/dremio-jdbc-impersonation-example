@@ -93,7 +93,7 @@ Compile the java source file  with the command:
 
      $ javac DremioJdbcImpersonationExample.java
 
-Notice that the JDBC connection string specifies the `impersonation_target` property that specifies a user that is different from the connection user specified in the userId variable.
+Notice that the JDBC connection string includes the `impersonation_target` property that specifies a user that is different from the connection user specified in the userId variable.
 
 ### Step 6. Set the Java class path
 

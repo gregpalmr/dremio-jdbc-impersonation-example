@@ -4,29 +4,7 @@ A Java JDBC client example that uses the Dremio inbound impersonation capability
 
 USAGE:
 
-### Step 1. Clone this git repo with the command:
-
-     $ git clone https://github.com/gregpalmr/dremio-jdbc-impersonation-example
-
-If you don't have the git command line tool, you can download the git repo in ZIP file format.
-
-### Step 2. Download the Dremio JDBC Driver
-
-Download the Dremio JDBC driver from httpd://dremio.com/drivers and place it in this directory
-
-### Step 3. Compile the java source file
-
-Compile the java source file  with the command:
-
-     $ javac DremioJdbcImpersonationExample.java
-
-### Step 4. Set the Java class path
-
-Set the class path  with the command:
-
-     $ export CLASSPATH="./dremio-jdbc-driver-*.jar:."
-
-### Step 5. Setup the "inbound impersonation" feature on your Dremio Enterprise cluster.
+### Step 1. Setup the "inbound impersonation" feature on your Dremio Enterprise cluster.
 
 a. Sign into your Dremio Enterprise coordinator node as an administrator.
 
@@ -87,7 +65,39 @@ d. Verify that the command ran correctly. Use the command:
           FROM   sys.options 
           WHERE  name = 'exec.impersonation.inbound_policies'
 
-### Step 6. Run the example JDBC client application with the command format:
+### Step 2. Install the Dremio Samples data source
+
+a. In the Dremio Web UI, click on the "Add Sample Source" button.
+
+b. Click on the new Samples link under the "Data Lakes" sources.
+
+c. Click on the samples.dremio.com folder and then hover over the NYC-taxi-trips "Actions" column.
+
+d. Click on the "Format folder" icon and then click on the Save button.
+
+### Step 3. Clone this git repo with the command:
+
+     $ git clone https://github.com/gregpalmr/dremio-jdbc-impersonation-example
+
+If you don't have the git command line tool, you can download the git repo in ZIP file format.
+
+### Step 4. Download the Dremio JDBC Driver
+
+Download the Dremio JDBC driver from httpd://dremio.com/drivers and place it in this directory
+
+### Step 5. Compile the java source file
+
+Compile the java source file  with the command:
+
+     $ javac DremioJdbcImpersonationExample.java
+
+### Step 6. Set the Java class path
+
+Set the class path  with the command:
+
+     $ export CLASSPATH="./dremio-jdbc-driver-*.jar:."
+
+### Step 7. Run the example JDBC client application with the command format:
 
      $ java DremioJdbcImpersonationExample <dremio coordinator ip addr> <dremio proxy user id> <dremio proxy user password> <target user id>"
 

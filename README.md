@@ -34,7 +34,9 @@ A Java JDBC client example that uses the Dremio inbound impersonation capability
           }
           ]'
 
-  You can also specify groups in the principals settings, like this:
+Where the proxy user proxy-user-1 can submit Dremio queries for the real users’ target-user-1 and target-user-2. And where the proxy user proxy-user-2 can submit Dremio queries for the real users  target-user-2, target-user-3, and target-user-4. 
+
+You can also specify groups in the principals settings, like this:
 
           ALTER SYSTEM SET "exec.impersonation.inbound_policies"='[
           {
